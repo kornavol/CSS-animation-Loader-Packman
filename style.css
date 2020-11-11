@@ -1,0 +1,104 @@
+/* Packman */
+
+body {
+    background-color: #bcfcf2;
+}
+
+
+#packman {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+	top: 50%; 
+    left: 25%; 
+    /* border: 2px solid black; */
+
+}
+
+#eye {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+
+    position: relative;
+    top:-170px;
+    left: 100px;
+}
+  
+/* 
+--exapel--
+#half-circle {
+    --an exapel--
+    height: 200px; 
+    width: 100px; 
+    border-radius: 150px 0 0 150px; 
+    background-color: yellow; 
+}  */
+
+#half-circle-top {
+    height: 100px; 
+    width: 200px; 
+    border-radius: 150px 150px 0 0 ; 
+    /* background-color: green;  */
+    background-color: #ffcc00;
+    animation: eat2 1s infinite;
+} 
+
+#half-circle-bottom {
+    height: 100px; 
+    width: 200px; 
+    border-radius: 0 0 150px 150px ; 
+    /* background-color: green;  */
+    background-color: #ffcc00;
+    animation: eat 1s infinite ;
+} 
+
+@keyframes eat {
+   100%{transform: rotate(35deg);}
+
+}
+
+@keyframes eat2 {
+    100%{transform: rotate(-35deg);}
+ 
+ }
+
+ #balls {
+    display: flex;
+    position: absolute;
+	top: 58%; 
+    left: 35%; 
+    animation: move 1s ease-in infinite ;
+    z-index: -1;
+ }
+
+ .ball {
+     width: 50px;
+     height: 50px;
+     /* background-color: green; */
+     border-radius: 50%;
+     margin-left: 50px;
+     background-color: #ffcc00;
+ }
+
+ @keyframes move {
+     100% {translate: -11%;}
+ }
+
+ @keyframes color {
+    0% {background-color: #ffcc00;} 
+    50% {background-color: #ffcc00;} 
+    51% {background-color: red;}
+    100% {background-color: red;}
+}
+
+ #balls > div:nth-of-type(odd) {
+     /* background-color: green; */
+     animation: color 2s  linear infinite;
+ }
+
+ #balls > div:nth-of-type(even) {
+    /* background-color: green; */
+    animation: color 2s  infinite linear reverse;
+}
